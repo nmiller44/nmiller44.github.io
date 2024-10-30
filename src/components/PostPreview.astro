@@ -1,0 +1,21 @@
+---
+const { post } = Astro.props;
+---
+<article class="row-span-3 mx-2 my-8 md:mx-8">
+    <h2 class="text-2xl font-bold text-neutral-800 mb-2">
+        <a href={post.url}>
+            {post.frontmatter.title}
+        </a>
+    </h2>
+    <p class="pb-4 font-light text-neutral-500">
+        {post.frontmatter.description}
+    </p>
+    <a  href={post.url}
+        class="inline-flex items-center text-sky-500
+               hover:text-sky-700 hover:underline ">
+        Read More
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mt-1 ml-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+    </a>
+</article>
