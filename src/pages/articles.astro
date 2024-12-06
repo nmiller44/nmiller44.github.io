@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro'
+import PostPreview from '../components/PostPreview.astro'
+const allPosts = await Astro.glob('./posts/*.md');
+---
+<Base>
+    <h1 class="text-4xl font-bold text-neutral-800 text-center mb-8">
+        Articles
+    </h1>
+    <div class="grid grid-cols-1 md:grid-cols-3">
+        {allPosts.map((post, idx) => <PostPreview post={post} />)}
+    </div>
+</Base>
