@@ -1,13 +1,26 @@
 ---
 import Base from '../layouts/Base.astro'
-import PostPreview from '../components/PostPreview.astro'
-const allPosts = await Astro.glob('./posts/*.md');
+import abstractBg from '../assets/abstract-lines.svg'
+import Card from '../components/crafted-astro/card/Card.astro'
+import CardBody from '../components/crafted-astro/card/CardBody.astro'
 ---
 <Base>
-    <h1 class="text-4xl font-bold text-neutral-800 text-center mb-8">
-        Articles
-    </h1>
-    <div class="grid grid-cols-1 md:grid-cols-3">
-        {allPosts.map((post, idx) => <PostPreview post={post} />)}
+    <div    class="grid grid-cols-12 gap-5 max-w-5xl m-auto p-5 py-32 bg-cover bg-no-repeat"
+            style=`background-image: url(${abstractBg.src})`>
+        <div class="col-span-9">
+            <Card>
+                <CardBody>
+                    <div class="mb-2 text-lg font-semibold text-neutral-600">Welcome to my site, I'm Neil Miller a</div>
+                    <div class="mb-6 text-5xl leading-snug font-bold uppercase text-neutral-900">Full Stack Software Engineer & Architect</div>
+                    <div class="mb-6 text-xl leading-normal text-neutral-600">
+                        Forty4.dev is my blog, portfolio, and project site. 
+                        I built it to share some of the cool stuff I've been working on.
+                    </div>
+                    <div class="py-3">
+                        <a href="/articles" class="px-3 py-3 rounded-md shadow-sm text-sm text-white font-semibold bg-green-900 hover:bg-green-700">Read About It</a>
+                    </div>
+                </CardBody>
+            </Card>
+        </div>
     </div>
 </Base>

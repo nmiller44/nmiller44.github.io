@@ -1,0 +1,15 @@
+---
+const { 
+    title,
+    showTitle = false,
+ } = Astro.props;
+---
+<div class="rounded-md border border-neutral-200 bg-white shadow shadow-neutral-300 flex flex-col">
+    {
+        showTitle &&
+        <div class="px-5 py-6 border-b border-neutral-200">
+            <div class="text-lg font-medium leading-6 text-neutral-900">{ title }</div>
+        </div>
+    }
+    <slot />
+</div>
