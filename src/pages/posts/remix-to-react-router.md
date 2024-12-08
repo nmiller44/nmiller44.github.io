@@ -4,7 +4,7 @@ layout: '../../layouts/Md.astro'
 pubDate: 2024-11-29
 description: 'The announcement that Remix was being deprecated was a shock as Remix is one of my favorite ways to build apps. In this article, I''ll demonstrate how little changes when moving from Remix with Vite to React Router 7.'
 author: 'NMiller44'
-tags: ["ui", "remix", "react-router", "typescript", "blog", "vite]
+tags: ["ui", "remix", "react-router", "typescript", "blog", "vite"]
 ---
 The announcement that Remix was being depracated was a shock as Remix is one of my favorite ways to build apps. The good news is that since I'd already been using Remix as a Vite plugin, not much changes when moving to React Router 7. I'm not changing my article tags though, come at me.
 
