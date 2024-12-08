@@ -1,0 +1,12 @@
+---
+const { tag } = Astro.props;
+---
+<a href=`/tags/${tag}`>
+    <div class="    pt-6
+                    h-24 w-16 rounded-md shadow-sm
+                    text-neutral-800 hover:text-white bg-neutral-300 hover:bg-green-800 hover:ring-2 hover:ring-green-800">
+        <div class="">
+            <slot /> 
+        </div> 
+    </div>
+</a>
