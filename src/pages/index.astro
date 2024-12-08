@@ -3,24 +3,58 @@ import Base from '../layouts/Base.astro'
 import abstractBg from '../assets/abstract-lines.svg'
 import Card from '../components/crafted-astro/card/Card.astro'
 import CardBody from '../components/crafted-astro/card/CardBody.astro'
+import TechElement from '../components/tech-grid/TechElement.astro'
+import AstroLogo from '../components/tech-grid/AstroLogo.astro'
+import ReactLogo from '../components/tech-grid/ReactLogo.astro'
+import RemixLogo from '../components/tech-grid/RemixLogo.astro'
+import TailwindLogo from '../components/tech-grid/TailwindLogo.astro'
+import TypeScriptLogo from '../components/tech-grid/TypeScriptLogo.astro'
+import ViteLogo from '../components/tech-grid/ViteLogo.astro'
 ---
 <Base>
-    <div    class="grid grid-cols-12 gap-5 max-w-5xl m-auto p-0 py-2 md:p-5 md:py-32 bg-cover bg-no-repeat"
+    <div    class="grid grid-cols-12 gap-5 max-w-5xl m-auto p-0 py-2 pb-8 md:p-5 md:py-32 
+                    bg-[length:0px] md:bg-cover bg-no-repeat bg-center"
             style=`background-image: url(${abstractBg.src})`>
-        <div class=" col-span-12 md:col-span-9">
+        <div class="col-span-12 md:col-span-10 lg:col-span-9">
             <Card>
                 <CardBody>
                     <div class="mb-2 text-md md:text-lg font-semibold text-neutral-600">Welcome to my site, I'm Neil Miller a</div>
-                    <div class="mb-6 text-2xl md:text-5xl leading-snug font-bold uppercase text-neutral-900">Full Stack Software Engineer & Architect</div>
-                    <div class="mb-6 text-xl leading-normal text-neutral-600">
+                    <h1 class="mb-6 text-2xl md:text-5xl leading-snug font-bold uppercase text-neutral-800">Full Stack Software Engineer & Architect</h1>
+                    <h2 class="mb-6 text-xl leading-normal text-neutral-600">
                         Forty4.dev is my blog, portfolio, and project site. 
                         I built it to share some of the cool stuff I've been working on.
-                    </div>
+                    </h2>
                     <div class="py-3">
                         <a href="/articles" class="px-3 py-3 rounded-md shadow-sm text-sm text-white font-semibold bg-green-900 hover:bg-green-700">Read About It</a>
                     </div>
                 </CardBody>
             </Card>
         </div>
+    </div>
+    <div class="flex flex-col pt-12">
+        <div class="mb-8 text-4xl font-bold text-neutral-800 text-center">Tech Stack</div>
+        <div class="text-neutral-600 text-center">These are some of my favorite tools. Click to find out more.</div>
+        <div class="pt-16 max-w-5xl m-auto">
+            <div class="grid grid-cols-6 gap-5">
+                <TechElement tag="astro">
+                    <AstroLogo />
+                </TechElement>
+                <TechElement tag="react">
+                    <ReactLogo />
+                </TechElement>
+                <TechElement tag="remix">
+                    <RemixLogo />
+                </TechElement>
+                <TechElement tag="tailwind">
+                    <TailwindLogo />
+                </TechElement>
+                <TechElement tag="typescript">
+                    <TypeScriptLogo />
+                </TechElement>
+                <TechElement tag="vite">
+                    <ViteLogo />
+                </TechElement>
+            </div>  
+        </div>  
     </div>
 </Base>
