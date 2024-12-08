@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro'
+import PostPreview from '../../components/PostPreview.astro'
+
+export async function getStaticPaths() {
+    const allPosts = await Astro.glob('../posts/*.md');
+
+  return [
+    { params: { tag: "astro" }, props: {posts: allPosts} },
+    { params: { tag: "react" }, props: {posts: allPosts} },
+    { params: { tag: "remix" }, props: {posts: allPosts} },
+    { params: { tag: "tailwind" }, props: {posts: allPosts} },
+    { params: { tag: "typescript" }, props: {posts: allPosts} },
+    { params: { tag: "vite" }, props: {posts: allPosts} },
+  ];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const filteredPosts = posts.filter((post) => post.frontmatter.tags?.includes(tag));
+---
+<Base pageTitle={tag}>
+    <h1 class="text-3xl text-center font-bold pb-6">
+        Articles tagged with 
+        <span class="inline-block bg-neutral-200 px-3 py-2 rounded-lg shadow-sm">{tag}</span>
+    </h1>
+    <div class="grid grid-cols-3">
+        {filteredPosts.map((post) => 
+            <PostPreview post={post} />
+        )}
+    </div>
+</Base>
