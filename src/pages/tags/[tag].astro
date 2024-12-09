@@ -20,13 +20,15 @@ const { posts } = Astro.props;
 const filteredPosts = posts.filter((post) => post.frontmatter.tags?.includes(tag));
 ---
 <Base pageTitle={tag}>
-    <h1 class="text-3xl text-center font-bold pb-6">
-        Articles tagged with 
-        <span class="inline-block bg-neutral-200 px-3 py-2 rounded-lg shadow-sm">{tag}</span>
-    </h1>
-    <div class="grid grid-cols-3">
-        {filteredPosts.map((post) => 
-            <PostPreview post={post} />
-        )}
+    <div class="m-auto p-5 pt-12">
+        <h1 class="text-5xl font-bold text-neutral-800 text-center -mt-5 mb-8">
+            Articles tagged with 
+            <span class="inline-block bg-neutral-200 mt-5 px-3 py-2 rounded-lg shadow-sm">{tag}</span>
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {filteredPosts.map((post) => 
+                <PostPreview post={post} />
+            )}
+        </div>
     </div>
 </Base>

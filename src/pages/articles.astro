@@ -8,7 +8,7 @@ const allPosts = await Astro.glob('./posts/*.md');
         <h1 class="text-5xl font-bold text-neutral-800 text-center mb-8">
             Articles
         </h1>
-        <div class="grid grid-cols-1 Base:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {allPosts.map((post, idx) => <PostPreview post={post} />)}
         </div>
     </div>
