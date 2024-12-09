@@ -4,7 +4,7 @@ layout: '../../layouts/Md.astro'
 pubDate: 2024-10-09
 description: 'Remix Forms have an old school feel anlongside some modern touches that make for a powerful combination. In this post, I will demonstrate using Fetcher and Optimistic UI while building the ubiquitous To Do app.'
 author: 'NMiller44'
-tags: ["ui", "remix", "optimistic-ui", "typescript", "blog"]
+tags: ["ui", "react", "remix", "optimistic-ui", "typescript", "blog"]
 ---
 Remix Forms have an old school feel anlongside some modern touches that make for a powerful combination. In this post, I will demonstrate using Fetcher and Optimistic UI while building the ubiquitous To Do app.
 
