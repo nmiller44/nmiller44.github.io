@@ -100,6 +100,53 @@ module.exports = {
 
 Excellent, restart your Dev server and you should have all the tools in place to create a great looking blog with Astro. Next step, add some content!
 
-## Add Layouts and Content
+## Add Base Layout
 
-Check back later for more information on adding layouts and starting to add content to your new Astro blog project.
+Astro utilizes a layout system that allows you to create a reusable shell for your site. We'll create a base layout that will be used for all of our pages. This layout will include the header, footer, and any other elements that should be present on every page. We'll also set up this base layout to handle meta information from individual pages for SEO purposes.
+
+Create a new file in the `src/layouts` directory called `Base.astro`. This file will contain the basic structure of our site:
+
+```html
+---
+import Nav from "../components/Nav.astro"
+import Footer from "../components/Footer.astro"
+
+const { 
+    title = "Astro Title", 
+    description = "Astro Starter Description"
+} = Astro.props;
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{ title }</title>
+    <meta name="description" content={ description }>
+	</head>
+	<body>
+      <Nav />
+      <slot />
+      <Footer />
+	</body>
+</html>
+```
+
+Note: This step requires Nav and Footer components to be created in the `src/components` directory. These components can be as simple or complex as you'd like. If you haven't created those components, remove the import statements and the components from the layout. Also, check out my other articles for information on creating Nav and Footer components for Astro!
+
+Now that we have a base layout, we can update our `src/pages/index.astro` file to utilize this layout. Update the file to look like this:
+
+```html
+---
+import Base from '../layouts/Base.astro'
+
+const title = 'Astro Blog Starter'
+const description = 'Astro Blog Starter Description'
+---
+<Base title={title} description={description}>
+	<h1 class="text-3xl font-bold underline">Astro</h1>
+</Base>
+```
+
+Now your index page will utilize the Base layout and include the title and description for SEO purposes. As you add more pages, utilize this Base layout to ensure all your pages have a consistent look and feel.
