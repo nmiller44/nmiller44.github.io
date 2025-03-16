@@ -10,6 +10,16 @@ import Footer from "../components/Footer.astro"
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="Forty4.dev is my blog, portfolio, and project site. I built it to share some of the cool stuff I've been working on." />
 		<title>Forty4.dev - Portfolio and Project Site</title>
+
+		<!-- Google tag (gtag.js) -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-LECBCDG6XJ"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-LECBCDG6XJ');
+		</script>
 	</head>
 	<body>
 		<Nav />
