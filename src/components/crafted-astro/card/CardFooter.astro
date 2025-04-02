@@ -9,6 +9,9 @@ const {
     className
  } = Astro.props;
 ---
-<div class={classNames("p-5 grow", className)}>
+<div class={classNames(
+                "px-5 py-6 border-t border-border",
+                "text-foreground",
+                className)}>
     <slot />
 </div>

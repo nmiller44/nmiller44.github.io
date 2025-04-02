@@ -1,15 +1,22 @@
 ---
-const { 
-    title,
-    showTitle = false,
- } = Astro.props;
+import { classNames } from "@/utils/classNames"
+import CardHeader from "@/components/crafted-astro/card/CardHeader.astro";
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    className?: string;
+}
+
+const { title, subtitle, className } = Astro.props;
 ---
-<div class="rounded-md border border-neutral-200 bg-white shadow shadow-neutral-300 flex flex-col">
+<div class={classNames( 
+                "flex flex-col",
+                "rounded-md border border-border bg-card text-card-foreground shadow",
+                className)}>
     {
-        showTitle &&
-        <div class="px-5 py-6 border-b border-neutral-200">
-            <div class="text-lg font-medium leading-6 text-neutral-900">{ title }</div>
-        </div>
+        !!title &&
+            <CardHeader title={title} subtitle={subtitle} />
     }
     <slot />
 </div>

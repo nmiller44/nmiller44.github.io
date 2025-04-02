@@ -1,0 +1,18 @@
+---
+import { classNames } from "@/utils/classNames"
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    className?: string;
+}
+
+const { title, subtitle, className } = Astro.props;
+---
+<div class="space-y-2">
+    { !!title
+        ? <h2 class={classNames("text-3xl font-bold tracking-tight", className)}>{ title }</h2>
+        : <slot />
+    }
+    { !!subtitle && <p class="text-sm text-muted-foreground">{ subtitle }</p> }
+</div>

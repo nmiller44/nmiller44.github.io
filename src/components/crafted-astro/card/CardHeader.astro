@@ -1,0 +1,20 @@
+---
+import { classNames } from "@/utils/classNames"
+import Heading5 from "@/components/crafted-astro/heading/Heading5.astro";
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    className?: string;
+}
+
+const { title, subtitle, className } = Astro.props;
+---
+<div class={classNames(
+                "px-5 py-6 border-b border-border",
+                className)}>
+    { !!title 
+        ? <Heading5 title={ title } subtitle={ subtitle } />
+        : <slot />
+    }
+</div>

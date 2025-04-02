@@ -1,0 +1,23 @@
+---
+interface Props {
+    title?: string;
+    subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+<div class="space-y-2">
+    <h4 class="text-xl font-semibold tracking-tight">
+        { !!title 
+            ? title 
+            : <slot /> 
+        }
+    </h4>
+    {
+        subtitle && (
+            <p class="text-gray-500">
+                {subtitle}
+            </p>
+        )
+    }
+</div>
