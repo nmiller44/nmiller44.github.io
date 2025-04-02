@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets';
+
+import Card from '../components/crafted-astro/card/Card.astro'
+import CardBody from '../components/crafted-astro/card/CardBody.astro'
+import Base from '../layouts/Base.astro'
+import Heading4 from '../components/crafted-astro/typography/Heading4.astro'
+import Badge from '../components/crafted-astro/Badge.astro'
+
+import craftedShot from '../assets/project_crafted-ui_card.jpg'
+import headflyerShot from '../assets/project_headflyer_card.jpg'
+---
+<Base>
+    <div class="m-auto p-5 pt-12">
+        <h1 class="text-5xl font-bold text-neutral-800 text-center mb-8">
+            Projects
+        </h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+                <Card>
+                    <CardBody>
+                        <div class="flex flex-col space-y-6">
+                            <div>
+                                <Image  src={ craftedShot } 
+                                        alt="Crafted UI Product Shot" 
+                                        class="rounded-lg shadow-lg"
+                                />
+                            </div>
+                            <div>
+                                <Heading4 title="Crafted UI" subtitle="Crafted UI is a component library for React using Tailwind." />
+                            </div>
+                            <div>
+                                I created Crafted UI to out of the need for a reusable component library for my projects. It is built using React and Tailwind CSS. I could have used an off the shelf library, but wanted to work with something opinionated my way.
+                            </div>
+                            <div>
+                                <a href="https://crafted-ui.com" target="_blank" class="text-green-900 hover:text-green-600 flex items-center">
+                                    Visit crafted-ui.com
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-2 mt-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                    </svg>  
+                                </a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <Badge>React</Badge>
+                                <Badge>Astro</Badge>
+                                <Badge>Tailwind</Badge>
+                                <Badge>Vite</Badge>
+                            </div>
+                        </div>
+                    </CardBody>
+                </Card>
+            </div> 
+            <div>
+                <Card>
+                    <CardBody>
+                        <div class="flex flex-col space-y-6">
+                            <div>
+                                <Image  src={ headflyerShot } 
+                                        alt="HeadFlyer Brewing Product Shot" 
+                                        class="rounded-lg shadow-lg"
+                                />
+                            </div>
+                            <div>
+                                <Heading4 title="HeadFlyer Brewing" subtitle="HeadFlyer Brewing is a unique brewery in Minneapolis." />
+                            </div>
+                            <div>
+                                HeadFlyer Brewing is a craft brewery and taproom in Minneapolis. For this site, I wanted to capture the cool visuals of HeadFlyer's brand, product designs, and historical taproom space while focusing on usability and SEO.
+                            </div>
+                            <div>
+                                <a href="https://headflyerbrewing.com" target="_blank" class="text-green-900 hover:text-green-600 flex items-center">
+                                    Visit headflyerbrewing.com
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-2 mt-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                    </svg>  
+                                </a>
+                            </div>
+                            <div class="flex space-x-2">
+                                <Badge>Eleventy</Badge>
+                                <Badge>Tailwind</Badge>
+                            </div>
+                        </div>
+                    </CardBody>
+                </Card>
+            </div> 
+        </div>
+    </div>
+</Base>
