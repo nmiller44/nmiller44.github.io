@@ -1,25 +1,25 @@
 ---
 const links = [
-    { href: '/', text: 'Home' },
-    { href: '/articles', text: 'Articles' },
-    { href: '/about', text: 'About' },
-    { href: '/projects', text: 'Projects' },
-    { href: '/contact', text: 'Contact' },
+    { href: '/', title: 'Home' },
+    { href: '/articles', title: 'Articles' },
+    { href: '/about', title: 'About' },
+    { href: '/projects', title: 'Projects' },
+    { href: '/contact', title: 'Contact' },
 ]
 ---
-<footer class="bg-white">
+<footer class="bg-background">
   <div class="mx-auto max-w-7xl overflow-hidden px-4 py-6 sm:px-6 lg:px-8 lg:py-12">
     <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
       { links.map((link) => (
         <div class="px-4 py-2 lg:px-5">
           <a  href={link.href} 
-              class="text-base text-gray-500 hover:text-gray-900">
-                { link.text }
+              class="text-base text-muted-foreground hover:text-foreground">
+                { link.title }
           </a>
         </div>
         )
     )}
     </nav>
-    <p class="mt-8 text-center text-base text-gray-400">© 2025 Forty4. All rights reserved.</p>
+    <p class="mt-8 text-center text-base text-muted-foreground">© 2025 Forty4. All rights reserved.</p>
   </div>
 </footer>

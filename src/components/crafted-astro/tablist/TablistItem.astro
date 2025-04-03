@@ -1,0 +1,17 @@
+---
+import { classNames } from "@/utils/classNames"
+
+interface Props {
+    className?: string;
+}
+
+const { className } = Astro.props;
+---
+<li class={classNames(
+            "px-1 py-4",
+            "text-sm font-medium text-muted-foreground hover:text-foreground",
+            "has-[.active]:text-primary has-[.active]:border-b-2 has-[.active]:border-primary",
+            className
+        )}>
+    <slot />
+</li>

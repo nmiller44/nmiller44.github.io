@@ -51,7 +51,7 @@ This snippet includes a hyperlinked title and post description for your componen
 
 ```js
 <article>
-    <h2 class="text-2xl font-bold text-neutral-800 mb-2">
+    <h2 class="text-2xl font-bold text-foreground mb-2">
         <a href={post.url}>
             {post.frontmatter.title}
         </a>
@@ -66,7 +66,7 @@ Much better. Now we have a clean, easy to read post summary. But we want users t
 
 ```js
 <article>
-    <h2 class="text-2xl font-bold text-neutral-800 mb-2">
+    <h2 class="text-2xl font-bold text-foreground mb-2">
         <a href={post.url}>
             {post.frontmatter.title}
         </a>

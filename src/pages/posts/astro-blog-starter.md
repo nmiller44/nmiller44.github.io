@@ -123,7 +123,7 @@ const {
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{ title }</title>
-    <meta name="description" content={ description }>
+    <meta name="description" content={ description } />
 	</head>
 	<body>
       <Nav />
