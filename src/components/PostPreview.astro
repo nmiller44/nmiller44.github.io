@@ -2,12 +2,12 @@
 const { post } = Astro.props;
 ---
 <article class="max-w-xs m-auto justify-self-center mx-2 my-8 md:mx-8">
-    <h2 class="text-2xl font-bold text-neutral-800 mb-2">
+    <h2 class="text-2xl font-bold text-foreground mb-2">
         <a href={post.url}>
             {post.frontmatter.title}
         </a>
     </h2>
-    <p class="pb-4 font-light text-neutral-500">
+    <p class="pb-4 font-light text-muted-foreground">
         {post.frontmatter.description}
     </p>
     <a  href={post.url}
