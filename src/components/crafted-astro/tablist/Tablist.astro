@@ -1,0 +1,17 @@
+---
+import { classNames } from "@/utils/classNames"
+
+interface Props {
+    bordered?: boolean;
+    className?: string;
+}
+
+const { bordered = false, className } = Astro.props;
+---
+<ul class={classNames(  
+                bordered ? "border-b border-border" : "", 
+                "flex space-x-8",
+                className
+            )}>
+    <slot />
+</ul>
